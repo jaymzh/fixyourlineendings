@@ -12,7 +12,14 @@ export default function How() {
 
     return (
         <section id="tab-how" aria-labelledby="tab-how-label">
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-center">How do I fix it?</h1>
+            <h1
+                className={
+                    'text-4xl md:text-5xl font-semibold tracking-tight mb-4 ' +
+                    'text-center'
+                }
+            >
+                How do I fix it?
+            </h1>
             <p className="mb-8 text-slate-600 text-center">
                 Choose your editor below and follow the steps.
             </p>
@@ -45,16 +52,35 @@ export default function How() {
                             overflow: 'hidden',
                         }),
                     }}
-                    onChange={opt => setSelected(EDITORS.find(e => e.id === opt?.value))}
+                    onChange={opt =>
+                        setSelected(EDITORS.find(e => e.id === opt?.value))
+                    }
                 />
             </div>
 
             {selected && (
-                <div className="bg-white shadow-xl shadow-slate-100/70 rounded-3xl p-6 md:p-8 border border-slate-200/80 mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-slate-900">{selected.name}</h2>
+                <div
+                    className={
+                        'bg-white shadow-xl shadow-slate-100/70 rounded-3xl ' +
+                            'p-6 md:p-8 border border-slate-200/80 mx-auto'
+                    }
+                >
+                    <h2
+                        className={
+                            'text-2xl md:text-3xl font-semibold mb-6 ' +
+                                'text-center text-slate-900'
+                        }
+                    >
+                        {selected.name}
+                    </h2>
                     <ErrorBoundary>
                         <div className="markdown">
-                            <ReactMarkdown rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }]]}>
+                            <ReactMarkdown
+                                rehypePlugins={[[
+                                    rehypeHighlight,
+                                    { ignoreMissing: true },
+                                ]]}
+                            >
                                 {selected.fix}
                             </ReactMarkdown>
                         </div>

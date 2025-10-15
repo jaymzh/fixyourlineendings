@@ -16,14 +16,13 @@ export default function App() {
             </main>
 
             <footer className="mt-8 border-t border-slate-200/80">
-                <div className="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-slate-600">
-                    You can contribute to this page on{' '}
-                    <a
+                <div
+                    className="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-slate-600"
+                >
+                    You can contribute to this page on <a
                         href="https://github.com/jaymzh/fixyourlineendings"
                         className="font-medium text-slate-800 underline underline-offset-4 decoration-slate-300 hover:decoration-slate-400"
-                    >
-                        GitHub
-                    </a>
+                    >GitHub</a>
                 </div>
             </footer>
         </div>
