@@ -56,6 +56,23 @@ insert_final_newline = true
 \nInstall the EditorConfig plugin if needed.`,
     },
     {
+        id: 'emacs',
+        name: 'GNU Emacs',
+        fix: `Emacs typically adds a final newline automatically, but if not, the variable \`require-final-newline\` can be customized to do this; see \`C-h v require-final-newline\`. Add to your Emacs init file:
+
+\n\n\`\`\`lisp
+(setq require-final-newline t)
+\`\`\`
+\nOptionally, install and use the \`editorconfig\` package to use #editorconfig:
+\n\n\`\`\`lisp
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+\`\`\`
+`,
+    },
+    {
         id: 'nano',
         name: 'GNU Nano',
         fix: `**Nano** doesn’t have a direct 'insert final newline' option. The simplest fix is using EditorConfig in your project:
